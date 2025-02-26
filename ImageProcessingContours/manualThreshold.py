@@ -13,4 +13,3 @@ def manualThresholding(image, threshold=150):
                 binary[i,j]=0
     return binary
 
-
