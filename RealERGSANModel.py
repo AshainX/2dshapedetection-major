@@ -56,8 +56,8 @@ class CustomDataset(Dataset):
         return self.lqTransform(lqImg), self.hqTransform(hqImg)
 
 # Create DataLoader
-highquality_folder = r"C:\Users\ashut\Desktop\ElementaryCQT"
-lowquality_folder = r"C:\Users\ashut\Desktop\ElementaryCQT_LOWRES"
+highquality_folder = r"C:\Users\ashut\Documents\GitHub\2dshapedetection-major\ElementaryCQT_200x200"
+lowquality_folder = r"C:\Users\ashut\Documents\GitHub\2dshapedetection-major\ElementaryCQT_100x100"
 trainDataset = CustomDataset(highquality_folder, lowquality_folder)  
 trainLoader = DataLoader(trainDataset, batch_size=16, shuffle=True)
 
@@ -118,7 +118,7 @@ optimizer = optim.Adam(model.parameters(), lr=1e-4)
 
 #-----------------------------------------------------------------------
 # ---- STEP 4: TRAINING LOOP ----
-numEpochs = 20  
+numEpochs = 4 #4 epoch for testing  
 for epoch in range(numEpochs):
     model.train()
     epochLoss = 0
